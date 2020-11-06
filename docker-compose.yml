@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  osm-tile-server:
+    image: overv/openstreetmap-tile-server:1.3.10
+    environment:
+        - ALLOW_CORS=enabled
+    volumes:
+      - openstreetmap-data:/var/lib/postgresql/12/main
+      - openstreetmap-rendered-tiles:/var/lib/mod_tile
+    ports:
+      - "4040:80"
+    command: "run"
+
+volumes:
+  openstreetmap-data:
+    external: true
+  openstreetmap-rendered-tiles:
+    external: true
