@@ -32,12 +32,12 @@
     ```
     or:
     ```
-    docker run -p 4040:80 -v openstreetmap-data:/var/lib/postgresql/12/main -d overv/openstreetmap-tile-server:1.3.10 run
+    docker run -p 80:80 -v openstreetmap-data:/var/lib/postgresql/12/main -d overv/openstreetmap-tile-server:1.3.10 run
     ```
 
 5. Check that everything is working as expected. Browse to:
 ```
-http://localhost:4040/tile/0/0/0.png
+http://localhost/tile/0/0/0.png
 ```
 
 
